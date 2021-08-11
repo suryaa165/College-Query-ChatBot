@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatBot</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        #chatLog{text-align: center;}
+        h2 {text-align: center;}
+    </style>
+    <script>
+        var know = {
+            "hello":"Hi",
+            "hi":"Hello,there",
+            "how are you":"Good,how are you?",
+            "i am fine":"How can i help u?",
+            "What is college name":"Vidya Jyothi Institute of Tecnology",
+            "where is your college situated":"It is located in Moinabad,Ranga Reddy District,Hyderabad",
+            "Who are u":"I am a bot,to help u",
+            "what is college name":"Vidya Jyothi Institute of Tecnology",
+            "where is your college situated":"It is located in Moinabad,Ranga Reddy District,Hyderabad",
+            "who are u":"I am a bot,to help u"
+        };
+        function talk() {
+             var user =document.getElementById("userBox") .value;
+             document.getElementById("chatwindow").innerHTML +="You: "+user+"<br>";
+            if(user in know){
+                document.getElementById("chatwindow").innerHTML +="Bot: "+ know[user]+"<br>";
+            } else{
+                document.getElementById("chatwindow").innerHTML+="Bot: "+"I dont understand ask me again"+"<br>";}}
+    </script>
+</head>
+<body>
+<h1 id="chatLog">College ChatBot<br><br></h1>
+<p id="chatwindow"></p>
+<div style="text-align: center;">
+    <input id="userBox" type="text" onkeydown="if(event.keyCode == 13){talk()}">
+</div>
+<h2>Ask Me<br></h2>
+</body>
+</html>
